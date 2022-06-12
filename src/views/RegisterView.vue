@@ -1,41 +1,33 @@
-<template>
-  <div class="hello">
+<template >
+  <div>
     <img alt="Bank logo" src="../assets/im1.png">
-    <br><br><br>
-
-    <h1>Login</h1>
+    <br><br>
+    <h1>Register</h1>
     <br>
-    <div class="login" >
+    <div class="Register" >
       <form action="">
+        Nombre completo
+        <input type="text" placeholder="Nombre completo" name="name" id="name">
+        <br><br>
         Correo electronico
         <input type="text" placeholder="Correo electronico" name="email" id="email">
         <br><br>
         Contraseña
         <input type="text" placeholder="Contraseña" name="password" id="password">
         <br><br>
-        <a class="boton" href="/" target="_blank">Ingresar</a>
-        
+        Confirmar contraseña
+        <input type="text" placeholder="Contraseña" name="confirmPassword" id="confirmPassword">
+        <br><br>
+        <a class="botonRegister" href="/" target="_blank">Registrarse</a>
+
+
       </form>
-      
-
     </div>
-
-
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.boton {
+.botonRegister {
   border: 1px solid #2e518b; /*anchura, estilo y color borde*/
   padding: 10px; /*espacio alrededor texto*/
   background-color: #cf2610; /*color botón*/
@@ -46,18 +38,4 @@ export default {
   border-radius: 50px; /*bordes redondos*/
 }
 
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
