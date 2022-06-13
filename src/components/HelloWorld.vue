@@ -8,13 +8,13 @@
     <div class="login" >
       <form action="">
         Correo electronico
-        <input type="text" placeholder="Correo electronico" name="email" id="email">
+        <input type="text" v-model="email" placeholder="Correo electronico" name="email" id="email">
         <br><br>
         Contraseña
-        <input type="text" placeholder="Contraseña" name="password" id="password">
+        <input type="text" v-model="password" placeholder="Contraseña" name="password" id="password">
         <br><br>
-        <a class="boton" href="/" target="_blank">Ingresar</a>
-        
+        <button type="button" v-on:click="IniciarSesion" class="botonLogin">Login</button>
+
       </form>
       
 
@@ -25,17 +25,51 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
+  data(){
+    return{
+      email: "", 
+    password: "",
+    }
+
+  },
   props: {
-    msg: String
+    msg: String,
+
+  },
+  methods: {
+    async IniciarSesion(){
+      console.log(this.email)
+      console.log(this.password)
+
+      const targetEndPoint = 'http://localhost:3000/login'
+      const payload = {email: this.email, password: this.password }
+
+      try {
+        const response = await axios.post(targetEndPoint, payload)
+        console.log('respuesta servidor', response)
+        alert('Ingreso con exito')
+
+        return this.$router.push('/ListUsersView')
+        
+      } catch (error) {
+        console.log('Error al iniciar sesion', error)
+        alert('Error al iniciar sesion')
+        
+      }
+    }
   }
+  
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.boton {
+.botonLogin {
   border: 1px solid #2e518b; /*anchura, estilo y color borde*/
   padding: 10px; /*espacio alrededor texto*/
   background-color: #cf2610; /*color botón*/
