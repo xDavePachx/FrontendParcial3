@@ -18,9 +18,11 @@ export default {
       console.log(this.email)
       console.log(this.password)
 
+      //esta es una prueba que hice
       const test = await axios.get('http://localhost:3000/test')
       console.log('lo que trae test', test)
 
+      //esta accede a mi endpoint register
       const targetEndPoint = 'http://localhost:3000/register'
       const payload = {name: this.name, email: this.email, password: this.password}
 
@@ -49,6 +51,11 @@ export default {
 
 <template >
   <div>
+    <nav>
+      <router-link to="/">Login</router-link> |
+      <router-link to="/RegisterView">Register</router-link>
+    </nav>
+    <router-view/>
     <img alt="Bank logo" src="../assets/im1.png">
     <br><br>
     <h1>Register</h1>
@@ -62,7 +69,7 @@ export default {
         <input type="text" v-model="email" placeholder="Correo electronico" name="email" id="email">
         <br><br>
         Contraseña
-        <input type="text" v-model="password" placeholder="Contraseña" name="password" id="password">
+        <input type="password" v-model="password" placeholder="Contraseña" name="password" id="password">
         <br><br>
         <br><br>
         <button type="button" v-on:click="createUser" class="botonRegister">Register</button>

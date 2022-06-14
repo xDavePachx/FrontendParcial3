@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import ListUsersView from '../views/ListUsersView.vue'
 import RealizarTransaccion from '../views/RealizarTransaccion.vue'
+import ListTrans from '../views/ListTrans.vue'
+
 
 
 Vue.use(VueRouter)
@@ -29,6 +31,12 @@ const routes = [
     path: '/RealizarTransaccion',
     name: 'RealilzarTransaccion',
     component: RealizarTransaccion
+  },
+
+  {
+    path: '/ListTrans',
+    name: 'ListTrans',
+    component: ListTrans
   },
 
   {

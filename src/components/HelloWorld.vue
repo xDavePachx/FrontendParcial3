@@ -1,5 +1,10 @@
 <template>
   <div class="hello">
+    <nav>
+      <router-link to="/">Login</router-link> |
+      <router-link to="/RegisterView">Register</router-link>
+    </nav>
+    <router-view/>
     <img alt="Bank logo" src="../assets/im1.png">
     <br><br><br>
 
@@ -11,7 +16,7 @@
         <input type="text" v-model="email" placeholder="Correo electronico" name="email" id="email">
         <br><br>
         Contraseña
-        <input type="text" v-model="password" placeholder="Contraseña" name="password" id="password">
+        <input type="password" v-model="password" placeholder="Contraseña" name="password" id="password">
         <br><br>
         <button type="button" v-on:click="IniciarSesion" class="botonLogin">Login</button>
 
